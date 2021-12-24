@@ -1,0 +1,45 @@
+﻿<Window x:Class="PaddleSharpDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PaddleSharpDemo"
+        mc:Ignorable="d"
+        Title="PaddleOCR Demo" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="3 2 3 2">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Margin="0 0 0 2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Height="30" VerticalContentAlignment="Center"
+                     x:Name="FileTextBox"></TextBox>
+            <Button Grid.Column="1" x:Name="SelectFileButton"
+                    Margin="5 0 0 0" Height="30" Width="120"
+                    Click="SelectFileButton_Click" Content="浏览图片"/>
+            <Button Grid.Column="2" x:Name="ParseButton"
+                    Margin="5 0 0 0" Height="30" Width="120"
+                    Click="ParseButton_Click" Content="识别"/>
+        </Grid>
+
+        <TextBox Grid.Row="1" x:Name="ResultTextBox" 
+                 AllowDrop="True" TextWrapping="Wrap"
+                 IsReadOnly="True"
+                 HorizontalScrollBarVisibility="Auto" 
+                 VerticalScrollBarVisibility="Auto"
+                 PreviewDragOver="ResultTextBox_PreviewDragOver" 
+                 PreviewDrop="ResultTextBox_PreviewDrop">
+            Select Or Drag Image File To Start
+        </TextBox>
+        
+    </Grid>
+</Window>
