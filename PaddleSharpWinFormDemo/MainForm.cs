@@ -1,8 +1,6 @@
 using OpenCvSharp;
-using ScreenCapturerNS;
 using Sdcb.PaddleOCR;
 using Sdcb.PaddleOCR.KnownModels;
-using System.Data;
 
 namespace PaddleSharpWinFormDemo
 {
